@@ -1,3 +1,68 @@
 [
-  {"location": "Vancouver", "weather": "20", "condition": "rainy", "iconName": "rainy" }
+  {
+    "location": "Vancouver",
+    "weather": "20",
+    "condition": "rainy",
+    "iconName": "rainy"
+  },
+  {
+    "location": "Victoria",
+    "weather": "24°C",
+    "condition": "Sunny",
+    "iconName": "sunny"
+  },
+  {
+    "location": "Kelowna",
+    "weather": "28°C",
+    "condition": "Sunny",
+    "iconName": "sunny_cloudy"
+  },
+  {
+    "location": "Surrey",
+    "weather": "22°C",
+    "condition": "Cloudy",
+    "iconName": "partly_cloudy"
+  },
+  {
+    "location": "Burnaby",
+    "weather": "21°C",
+    "condition": "Partly Cloudy",
+    "iconName": "partly_cloudy"
+  },
+  {
+    "location": "Richmond",
+    "weather": "19°C",
+    "condition": "Foggy",
+    "iconName": "sunny"
+  },
+  {
+    "location": "Nanaimo",
+    "weather": "23°C",
+    "condition": "Showers",
+    "iconName": "showers"
+  },
+  {
+    "location": "Kamloops",
+    "weather": "30°C",
+    "condition": "Hot",
+    "iconName": "sunny"
+  },
+  {
+    "location": "Prince George",
+    "weather": "18°C",
+    "condition": "thunderstorm",
+    "iconName": "shower_rain"
+  },
+  {
+    "location": "Chilliwack",
+    "weather": "25°C",
+    "condition": "Sunny",
+    "iconName": "sunny"
+  },
+  {
+    "location": "Maple Ridge",
+    "weather": "22°C",
+    "condition": "Cloudy",
+    "iconName": "very_cloudy"
+  }
 ]
