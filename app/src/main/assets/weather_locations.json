@@ -1,5 +1,3 @@
 [
-  {"location": "Victoria", "weather": "18", "condition": "sunny", "icon": -1 },
-  {"location": "Campbell River", "weather": "22", "condition": "partly cloudy", "icon": -1 },
-  {"location": "Vancouver", "weather": "20", "condition": "rainy", "icon": -1 }
+  {"location": "Vancouver", "weather": "20", "condition": "rainy", "iconName": "rainy" }
 ]
