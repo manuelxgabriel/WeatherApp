@@ -1,5 +1,6 @@
 package rodriguez.manuel.weatherapp;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -29,26 +30,46 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction()
-                    .setReorderingAllowed(true)
-                    .add(R.id.fragment_city_view, FragmentCityList.class, null)
-                    .commit();
+
+        int orientation = getResources().getConfiguration().orientation;
+        if(orientation == Configuration.ORIENTATION_LANDSCAPE){
+            if(savedInstanceState == null){
+                getSupportFragmentManager().beginTransaction()
+                        .setReorderingAllowed(true)
+                        .add(R.id.fragment_city_view, FragmentCityList.class, null)
+                        .commit();
+            }
+
+            if(savedInstanceState == null){
+                getSupportFragmentManager().beginTransaction()
+                        .setReorderingAllowed(true)
+                        .add(R.id.fragment_current_weather, FragmentCurrentWeather.class,null)
+                        .commit();
+            }
+
+            if(savedInstanceState == null){
+                getSupportFragmentManager().beginTransaction()
+                        .setReorderingAllowed(true)
+                        .add(R.id.fragment_weather_alert, FragmentWeatherAlerts.class, null)
+                        .commit();
+
+            }
+        } else {
+            if(savedInstanceState == null){
+                getSupportFragmentManager().beginTransaction()
+                        .setReorderingAllowed(true)
+                        .add(R.id.fragment_city_view, FragmentCityList.class, null)
+                        .commit();
+            }
+
+            if(savedInstanceState == null){
+                getSupportFragmentManager().beginTransaction()
+                        .setReorderingAllowed(true)
+                        .add(R.id.fragment_current_weather, FragmentCurrentWeather.class,null)
+                        .commit();
+            }
         }
 
-        if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction()
-                    .setReorderingAllowed(true)
-                    .add(R.id.fragment_current_weather, FragmentCurrentWeather.class,null)
-                    .commit();
-        }
-
-        if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction()
-                    .setReorderingAllowed(true)
-                    .add(R.id.fragment_weather_alert, FragmentWeatherAlerts.class,null)
-                    .commit();
-        }
 
 
     }

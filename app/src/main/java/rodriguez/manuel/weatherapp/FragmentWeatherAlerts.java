@@ -10,9 +10,11 @@ import android.view.ViewGroup;
 
 public class FragmentWeatherAlerts extends Fragment {
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
