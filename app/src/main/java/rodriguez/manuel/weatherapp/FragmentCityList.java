@@ -1,13 +1,18 @@
 package rodriguez.manuel.weatherapp;
 
+import android.content.Intent;
 import android.location.Location;
+import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -25,7 +30,9 @@ public class FragmentCityList extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState
+
+        );
     }
 
     @Override
@@ -46,8 +53,28 @@ public class FragmentCityList extends Fragment {
 
         listView.setAdapter(adapter);
 
+        // Set the click listener for the list view items
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                LocationInfo selectedLocation = locations.get(position);
+                sendLocationBroadcast(selectedLocation);
+            }
+        });
+
         // Inflate the layout for this fragment
         return view;
+    }
+
+    private void sendLocationBroadcast(LocationInfo locationInfo){
+        Intent intent = new Intent("rodriguez.manuel.weatherapp.LOCATION_SELECTED");
+        intent.putExtra("location", locationInfo.getCity());
+        intent.putExtra("condition", locationInfo.getCondition());
+        intent.putExtra("temperature", locationInfo.getTemperature());
+        intent.putExtra("iconResId", locationInfo.getIconResId());
+        LocalBroadcastManager.getInstance(requireContext()).sendBroadcast(intent);
+
+        Log.d("BroadcastSent", "Broadcast send: " + locationInfo.getCity());
     }
 
 

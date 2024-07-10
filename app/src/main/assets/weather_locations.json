@@ -1,8 +1,8 @@
 [
   {
     "location": "Vancouver",
-    "weather": "20",
-    "condition": "rainy",
+    "weather": "20°C",
+    "condition": "Rainy",
     "iconName": "rainy"
   },
   {
