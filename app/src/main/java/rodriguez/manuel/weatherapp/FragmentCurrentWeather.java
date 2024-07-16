@@ -83,12 +83,12 @@ public class FragmentCurrentWeather extends Fragment {
         conditionTextView.setText(condition);
         temperatureTextView.setText(temperature);
         weatherIconImageView.setImageResource(iconResId);
-
     }
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
+        // Save the selected city temperature
         outState.putString(ARG_LOCATION, location);
         outState.putString(ARG_CONDITION, condition);
         outState.putString(ARG_TEMPERATURE, temperature);

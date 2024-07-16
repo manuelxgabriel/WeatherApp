@@ -1,15 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/light_blue"
     tools:context=".FragmentWeatherAlerts">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Fragment Weather Alerts" />
 
-</FrameLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_blue"
+            >
+            <!-- Wind Status Text -->
+            <TextView
+                android:id="@+id/windStatusLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wind Status"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="40dp"
+                android:textStyle="bold"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/windSpeed"
+                />
+
+            <!-- Wind Speed Value -->
+            <TextView
+                android:id="@+id/windSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7.70"
+                android:textSize="48sp"
+                android:textColor="@color/white"
+                android:layout_marginStart="40dp"
+                app:layout_constraintTop_toBottomOf="@id/windStatusLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Unit Text -->
+            <TextView
+                android:id="@+id/unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="km/h"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toTopOf="@id/windSpeed"
+                app:layout_constraintStart_toEndOf="@id/windSpeed"
+                android:layout_marginStart="8dp" />
+
+            <!-- Wind Status Text -->
+            <TextView
+                android:id="@+id/windDirection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WSW"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/windSpeed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card2"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card1"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_blue"
+            >
+            <!-- Wind Status Text -->
+            <TextView
+                android:id="@+id/windStatusLabel1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Huminity"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="40dp"
+                android:textStyle="bold"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/windSpeed1"
+                />
+
+            <!-- Wind Speed Value -->
+
+            <!-- Unit Text -->
+            <TextView
+                android:id="@+id/windSpeed1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="16dp"
+                android:text="12"
+                android:textColor="@color/white"
+                android:textSize="48sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/windStatusLabel1" />
+
+            <TextView
+                android:id="@+id/unit1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="%"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toTopOf="@id/windSpeed1"
+                app:layout_constraintStart_toEndOf="@id/windSpeed1"
+                android:layout_marginStart="8dp" />
+
+            <!-- Wind Status Text -->
+            <TextView
+                android:id="@+id/windDirection1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Normal"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/windSpeed1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card3"
+        android:layout_width="360dp"
+        android:layout_height="230dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card2"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_blue"
+            >
+            <!-- Wind Status Text -->
+            <TextView
+                android:id="@+id/windStatusLabel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sunrise"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="40dp"
+                android:textStyle="bold"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+            />
+
+            <TextView
+                android:id="@id/sunriseTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sunrise"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="40dp"
+
+                app:layout_constraintTop_toBottomOf="@+id/windStatusLabel2"
+                app:layout_constraintStart_toEndOf="@+id/sunrise"
+                app:layout_constraintEnd_toEndOf="parent"
+
+            />
+
+            <ImageView
+                android:id="@+id/sunrise"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/chevron"
+                android:layout_marginTop="40dp"
+                android:rotation="180"
+
+                app:layout_constraintTop_toBottomOf="@+id/windStatusLabel2"
+                app:layout_constraintEnd_toStartOf="@+id/sunriseTitle"
+                app:layout_constraintStart_toStartOf="parent"
+            />
+
+            <TextView
+                android:id="@id/sunriseTitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Sunrise"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sunrise1"
+                app:layout_constraintTop_toBottomOf="@+id/sunriseTitle"
+
+                />
+
+            <ImageView
+                android:id="@+id/sunrise1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/chevron"
+                android:layout_marginTop="10dp"
+
+                app:layout_constraintTop_toBottomOf="@+id/sunrise"
+                app:layout_constraintEnd_toStartOf="@+id/sunriseTitle1"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
