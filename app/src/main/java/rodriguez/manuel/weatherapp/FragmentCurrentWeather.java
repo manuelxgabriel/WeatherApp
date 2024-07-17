@@ -1,5 +1,6 @@
 package rodriguez.manuel.weatherapp;
 
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 
@@ -27,12 +28,21 @@ public class FragmentCurrentWeather extends Fragment {
     private int iconResId = R.drawable.rainy;
 
     private CityBroadcastReceiver cityBroadcastReceiver;
+    private TimeTickReceiver timeTickReceiver;
 
     private TextView cityNameTextView;
     private TextView conditionTextView;
     private TextView temperatureTextView;
     private ImageView weatherIconImageView;
 
+
+//    public static FragmentCurrentWeather newInstance(String location){
+//        FragmentCurrentWeather fragment = new FragmentCurrentWeather();
+//        Bundle args = new Bundle();
+//        args.putString(ARG_LOCATION, location);
+//        fragment.setArguments(args);
+//        return fragment;
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,6 +64,10 @@ public class FragmentCurrentWeather extends Fragment {
         cityBroadcastReceiver = new CityBroadcastReceiver(this);
         LocalBroadcastManager.getInstance(requireContext())
                 .registerReceiver(cityBroadcastReceiver, new IntentFilter("rodriguez.manuel.weatherapp.LOCATION_SELECTED"));
+
+        timeTickReceiver = new TimeTickReceiver(this);
+        requireContext().registerReceiver(timeTickReceiver, new IntentFilter(Intent.ACTION_TIME_TICK));
+
     }
 
     @Override
@@ -85,6 +99,13 @@ public class FragmentCurrentWeather extends Fragment {
         weatherIconImageView.setImageResource(iconResId);
     }
 
+    public void updateTemperature(int change){
+        int currentTemperature = Integer.parseInt(temperature.replace("°C", "").trim());
+        currentTemperature += change;
+        this.temperature = currentTemperature +"°C";
+        temperatureTextView.setText(this.temperature);
+    }
+
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -99,5 +120,6 @@ public class FragmentCurrentWeather extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         LocalBroadcastManager.getInstance(requireContext()).unregisterReceiver(cityBroadcastReceiver);
+        requireContext().unregisterReceiver(timeTickReceiver);
     }
 }
